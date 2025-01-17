@@ -5,16 +5,17 @@ const projects = [
     title: 'Pion Blanc, Offer generator',
     description: `A startup we're building with a small team. The offer generator is aimed at SME's who struggle with creating requests for quotes containing product data from multiple suppliers.
 
-      I've done roughly half of the frontend, migrated the backend from SQL Server Management Studio to Postgres, and dockerized the entirety for easier development and deployment. I'm also in the middle of building our homepage.
-    `,
+      I've done roughly half of the frontend, migrated the backend from SQL Server Management Studio to Postgres, and dockerized the entirety for easier development and deployment. I'm also in the middle of building our homepage.`,
     link: '',
+    target: "_blank"
   },
   {
     title: "LCA Data sharing portal for supply chains",
     description: `As a part of my Master's thesis, I developed a data portal in collaboration with Semantum. 
     
       The portal is used by Stora Enso to collect Life Cycle Assessment (LCA) data from pulp suppliers.`,
-    link: "/thesis"
+    link: "/thesis",
+    target: ""
   },
   {
     title: "Full Stack Open",
@@ -22,12 +23,14 @@ const projects = [
       
       Raising this to a project status due to it's high relevancy and the fact that I completed most of this outside of my studies.
     `,
-    link: "https://fullstackopen.com/"
+    link: "https://fullstackopen.com/",
+    target: "_blank"
   },
   {
     title: 'ProjectHub',
     description: 'A group project for school. A service for showcasing projects. I focused mostly on the frontend.',
     link: 'https://github.com/joelhackinen/projecthub',
+    target: "_blank"
   },
   {
     title: 'Minesweeper',
@@ -35,6 +38,7 @@ const projects = [
       Frontend is done with React and database with Node.js
     `,
     link: 'https://github.com/strengv1/minesweeper',
+    target: "_blank"
   },
 ]
 
@@ -59,7 +63,7 @@ export default function Projects() {
                     <Link
                       href={project.link}
                       className="text-sm font-medium text-blue-600 hover:text-blue-500"
-                      target="_blank"
+                      target={project.target}
                       rel="noopener noreferrer"
                     >
                       View Project &rarr;

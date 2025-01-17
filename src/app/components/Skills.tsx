@@ -41,7 +41,7 @@ export default function Skills() {
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="bg-white px-4 py-2 border-gray-300 border rounded-md shadow-sm text-center text-gray-800 cursor-pointer hover:bg-gray-200"
+              className="bg-white px-4 py-2 border-gray-300 border rounded-md shadow-md text-center text-gray-800 cursor-pointer hover:bg-gray-200"
               onClick={() => openModal(skill)}
             >
               {skill.name}
