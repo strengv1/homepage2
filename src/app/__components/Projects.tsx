@@ -13,7 +13,9 @@ const projects = [
     title: "LCA Data sharing portal for supply chains",
     description: `As a part of my Master's thesis, I developed a data portal in collaboration with Semantum. 
     
-      The portal is used by Stora Enso to collect Life Cycle Assessment (LCA) data from pulp suppliers.`,
+      The portal is used by Stora Enso to collect Life Cycle Assessment (LCA) data from pulp suppliers.
+      
+      More info on chapters 3.3 and 3.4 of my thesis.`,
     link: "/thesis",
     target: ""
   },
