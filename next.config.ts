@@ -1,6 +1,4 @@
 module.exports = {
-  output: 'standalone',
-  experimental: {
-    appDir: true,
-  },
-};
+  reactStrictMode: true,
+  // Add other necessary config options
+}
