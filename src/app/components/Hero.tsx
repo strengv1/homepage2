@@ -16,7 +16,13 @@ export default function Hero() {
             Ville Strengell
           </h1>
           <p className="mt-4 max-w-xl mx-auto text-xl text-gray-500">
-            Web Developer | Problem Solver | Tech Enthusiast
+            Web Developer | Problem Solver | Just a chill guy looking for work
+          </p>
+          <p className="mt-10 max-w-xl mx-auto text-left text-lg text-black">
+            Hey! I am a web-developer looking for work in a company that treats it's employees as valued individuals and cultivates a sense of community.
+          </p>
+          <p className="mt-4 max-w-xl mx-auto text-left text-lg text-black">
+            I recently graduated from Aalto University School of Electrical Engineering, where I majored in Automation and minored in Computer Science.
           </p>
         </div>
       </div>

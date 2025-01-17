@@ -2,19 +2,39 @@ import Link from 'next/link'
 
 const projects = [
   {
-    title: 'Project 1',
-    description: 'A brief description of Project 1',
-    link: 'https://github.com/yourusername/project1',
+    title: 'Pion Blanc, Offer generator',
+    description: `A startup we're building with a small team. The offer generator is aimed at SME's who struggle with creating requests for quotes containing product data from multiple suppliers.
+
+      I've done roughly half of the frontend, migrated the backend from SQL Server Management Studio to Postgres, and dockerized the entirety for easier development and deployment. I'm also in the middle of building our homepage.
+    `,
+    link: '',
   },
   {
-    title: 'Project 2',
-    description: 'A brief description of Project 2',
-    link: 'https://github.com/yourusername/project2',
+    title: "LCA Data sharing portal for supply chains",
+    description: `As a part of my Master's thesis, I developed a data portal in collaboration with Semantum. 
+    
+      The portal is used by Stora Enso to collect Life Cycle Assessment (LCA) data from pulp suppliers.`,
+    link: "/thesis"
   },
   {
-    title: 'Project 3',
-    description: 'A brief description of Project 3',
-    link: 'https://github.com/yourusername/project3',
+    title: "Full Stack Open",
+    description: `What an eye-opening course. Would recommend to anyone working on the field. Completed parts 1-9.
+      
+      Raising this to a project status due to it's high relevancy and the fact that I completed most of this outside of my studies.
+    `,
+    link: "https://fullstackopen.com/"
+  },
+  {
+    title: 'ProjectHub',
+    description: 'A group project for school. A service for showcasing projects. I focused mostly on the frontend.',
+    link: 'https://github.com/joelhackinen/projecthub',
+  },
+  {
+    title: 'Minesweeper',
+    description: `My very first own react app: Minesweeper!
+      Frontend is done with React and database with Node.js
+    `,
+    link: 'https://github.com/strengv1/minesweeper',
   },
 ]
 
@@ -28,17 +48,24 @@ export default function Projects() {
             <div key={project.title} className="bg-gray-50 rounded-lg shadow-md overflow-hidden">
               <div className="p-6">
                 <h3 className="text-lg font-medium text-gray-900">{project.title}</h3>
-                <p className="mt-2 text-sm text-gray-500">{project.description}</p>
-                <div className="mt-4">
-                  <Link
-                    href={project.link}
-                    className="text-sm font-medium text-blue-600 hover:text-blue-500"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Project &rarr;
-                  </Link>
-                </div>
+                <p
+                  className="mt-2 text-sm text-gray-500"
+                  dangerouslySetInnerHTML={{
+                    __html: project.description.replace(/\n/g, '<br>'),
+                  }}
+                />
+                {project.link && 
+                  <div className="mt-4">
+                    <Link
+                      href={project.link}
+                      className="text-sm font-medium text-blue-600 hover:text-blue-500"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Project &rarr;
+                    </Link>
+                  </div>
+                }
               </div>
             </div>
           ))}
