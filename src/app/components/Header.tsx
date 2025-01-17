@@ -15,7 +15,7 @@ export default function Header() {
           </div>
           <div className="flex items-center">
             <Link href="/thesis" className="text-gray-600 hover:text-gray-900 px-3 py-2">
-              Master's thesis
+              Master&apos;s thesis
             </Link>
             <Link href="#skills" className="text-gray-600 hover:text-gray-900 px-3 py-2">
               Skills

@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Thesis() {
   return (
     <div className="bg-gray-100 h-screen">

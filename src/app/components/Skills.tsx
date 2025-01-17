@@ -1,5 +1,6 @@
 "use client"
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface Skill {
@@ -10,13 +11,13 @@ interface Skill {
 
 export default function Skills() {
   const skills: Skill[] = [
-    { name: 'JavaScript / TypeScript', description: 'Used extensively in frontend and backend development. I prefer TS over JS, for obvious reasons.', examples: ['/path/to/js-example.png'] },
-    { name: 'React', description: 'Most of my projects are done with React.', examples: ['/path/to/react-example.png'] },
+    { name: 'JavaScript / TypeScript', description: 'Used extensively in frontend and backend development. I prefer TS over JS, for obvious reasons.', examples: [] },
+    { name: 'React', description: 'Most of my projects are done with React.', examples: [] },
     { name: 'Delphi', description: 'Got familiar with Delphi while working at Polycon, so used professionally for three years.', examples: [] },
     { name: 'Python', description: `We use a Flask backend for our startup. I've also built a few telegram bots and miscellaneous programs along the years.`, examples: [] },
     { name: 'Spring Boot', description: `Used for the backed on my Master's thesis project.`, examples: []},
     { name: 'Node.js', description: `Used here and there, majorly during the course Full Stack Open.`, examples: []},
-    { name: 'Docker', description: 'Containerized applications for development and deployment.', examples: ['/path/to/docker-example.png'] },
+    { name: 'Docker', description: 'Containerized applications for development and deployment.', examples: [] },
     { name: 'Next.js', description: 'Starting to use NextJS over React due to extra features. Still learning.', examples: [] },
     { name: 'CSS', description: 'Used mostly pure CSS while working at Polycon. I consider myself experienced with CSS, but still use Google when centering an element and flexbox fails me.', examples: [] },
     { name: 'Tailwind CSS', description: 'Started using Tailwind as it comes recommended with NextJS projects. It is very quick and easy but I often use Google/Chatgpt to figure out the keywords.', examples: [] },
@@ -71,7 +72,7 @@ export default function Skills() {
             {modalContent.examples.length > 0 && (
               <div className="mt-4">
                 {modalContent.examples.map((example, index) => (
-                  <img
+                  <Image
                     key={index}
                     src={example}
                     alt={`${modalContent.name} example ${index + 1}`}
