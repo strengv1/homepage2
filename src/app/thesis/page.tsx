@@ -1,6 +1,6 @@
 export default function Thesis() {
   return (
-    <div className="bg-gray-100 h-screen">
+    <div className="bg-gray-100 h-[91svh]">
       <embed
         src="master_strengell_ville_2024.pdf"
         type="application/pdf"
