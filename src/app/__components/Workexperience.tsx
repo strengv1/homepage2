@@ -1,14 +1,14 @@
 export default function Workexperience() {
   
-  const parentDivClasses = "mb-8 mx-12"
+  const parentDivClasses = "mb-8 max-w-4xl mx-auto"
   return (
-    <div className="bg-white border-b-gray-300 border-b">
+    <div id="workexperience" className="bg-gray-100 border-b-gray-300 border-b">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="text-left text-black">
           <h2 className="text-3xl font-extrabold text-gray-900">Work Experience</h2>
 
           {/* Pion Blanc */}
-          <div className="my-8 mx-12">
+          <div className="my-8 max-w-4xl mx-auto">
             <h3 className="text-xl font-bold">November 2024 - Present</h3>
             <p className="text-lg">Founder | Pion Blanc Oy</p>
             <ul className="list-disc ml-5">
@@ -53,7 +53,7 @@ export default function Workexperience() {
           </div>
 
           {/* References */}
-          <div>
+          <div className="mb-8 max-w-5xl mx-auto">
             <h3 className="text-xl font-bold">References</h3>
             <p className="text-lg">Sanna Huhtala, Supervisor at Polycon</p>
             <p className="text-lg">Email: <a href="mailto:sanna.huhtala@polycon.fi">sanna.huhtala@polycon.fi</a></p>

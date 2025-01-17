@@ -23,6 +23,9 @@ export default function Header() {
             <Link href="#projects" className="text-gray-600 hover:text-gray-900 px-3 py-2">
               Projects
             </Link>
+            <Link href="#workexperience" className="text-gray-600 hover:text-gray-900 px-3 py-2">
+              Experience
+            </Link>
             <Link href="#contact" className="text-gray-600 hover:text-gray-900 px-3 py-2">
               Contact
             </Link>
