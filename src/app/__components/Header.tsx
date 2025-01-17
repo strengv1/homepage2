@@ -20,7 +20,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-md z-10 sticky top-0 h-[9svh]">
+    <header className="bg-white shadow-md z-10 sticky top-0 h-[4rem]">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
         {/* Name */}
         <div className="flex-shrink-0">
