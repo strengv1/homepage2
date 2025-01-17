@@ -32,7 +32,7 @@ export default function Workexperience() {
             <h3 className="text-xl font-bold">March 2020 - February 2023</h3>
             <p className="text-lg">Software Developer | Polycon Oy</p>
             <ul className="list-disc ml-5">
-              <li>Developed Polycon's flagship product, Effector desktop version, and the palse.fi web portal for citizens and businesses. Worked on both server-side and client-side functionalities.</li>
+              <li>Developed Polycon&apos;s flagship product, Effector desktop version, and the palse.fi web portal for citizens and businesses. Worked on both server-side and client-side functionalities.</li>
               <li>Maintained existing codebase and developed new sections and extensions.</li>
             </ul>
           </div>
