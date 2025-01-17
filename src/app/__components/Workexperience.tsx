@@ -12,18 +12,18 @@ export default function Workexperience() {
             <h3 className="text-xl font-bold">November 2024 - Present</h3>
             <p className="text-lg">Founder | Pion Blanc Oy</p>
             <ul className="list-disc ml-5">
-              <li>A startup with friends.</li>
+              <li>A startup.</li>
               <li>Product is an Offer generator, more info in projects-section</li>
             </ul>
           </div>
 
-          {/* Aalto yliopisto */}
+          {/* Aalto university */}
           <div className={parentDivClasses}>
             <h3 className="text-xl font-bold">April 2024 - September 2024</h3>
-            <p className="text-lg">Research Assistant | Aalto Yliopisto</p>
+            <p className="text-lg">Research Assistant | Aalto University</p>
             <ul className="list-disc ml-5">
               <li>Master&apos;s thesis position.</li>
-              <li>Worked together with Semantum Oy, Stora Enso, and Aalto yliopisto to develop a data portal for sharing LCA data.</li>
+              <li>Worked together with Semantum Oy, Stora Enso, and Aalto University to develop a data portal for sharing LCA data.</li>
             </ul>
           </div>
 
