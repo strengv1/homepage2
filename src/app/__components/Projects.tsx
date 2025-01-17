@@ -15,7 +15,7 @@ const projects = [
     
       The portal is used by Stora Enso to collect Life Cycle Assessment (LCA) data from pulp suppliers.
       
-      More info on chapters 3.3 and 3.4 of my thesis.`,
+      More info on chapters 3.3 and 3.4 of my thesis, links below and in the header.`,
     link: "/thesis",
     target: ""
   },
@@ -46,7 +46,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-white py-16">
+    <section id="projects" className="bg-white border-b-gray-300 border-b py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-extrabold text-gray-900">Projects</h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
