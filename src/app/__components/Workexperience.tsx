@@ -1,5 +1,4 @@
 export default function Workexperience() {
-  
   const parentDivClasses = "mb-8 max-w-4xl mx-auto"
   return (
     <div id="workexperience" className="bg-gray-100 border-b-gray-300 border-b">
@@ -10,7 +9,7 @@ export default function Workexperience() {
           {/* Pion Blanc */}
           <div className="my-8 max-w-4xl mx-auto">
             <h3 className="text-xl font-bold">November 2024 - Present</h3>
-            <p className="text-lg">Founder | Pion Blanc Oy</p>
+            <p className="text-lg">Co-Founder | Pion Blanc Oy</p>
             <ul className="list-disc ml-5">
               <li>A startup.</li>
               <li>Product is an Offer generator, more info in projects-section</li>
