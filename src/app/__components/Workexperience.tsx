@@ -22,7 +22,7 @@ export default function Workexperience() {
             <p className="text-lg">Research Assistant | Aalto University</p>
             <ul className="list-disc ml-5">
               <li>Master&apos;s thesis position.</li>
-              <li>Worked together with Semantum Oy, Stora Enso, and Aalto University to develop a data portal for sharing LCA data.</li>
+              <li>Worked together with Semantum Oy to develop a data portal for Stora Enso to collect LCA data from it's suppliers.</li>
             </ul>
           </div>
 
