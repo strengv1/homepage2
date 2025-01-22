@@ -5,7 +5,7 @@ const projects = [
     title: 'Pion Blanc, Offer generator',
     description: `A startup we're building with a small team. The offer generator is aimed at SME's who struggle with creating requests for quotes containing product data from multiple suppliers.
 
-      I've done roughly half of the frontend, migrated the backend from SQL Server Management Studio to Postgres, and dockerized the entirety for easier development and deployment. I'm also in the middle of building our homepage.`,
+      I've done roughly half of the frontend, migrated the backend from Microsoft SQL Server to Postgres, and dockerized the entirety for easier development and deployment. I'm also in the middle of building our homepage.`,
     link: '',
     target: "_blank"
   },
