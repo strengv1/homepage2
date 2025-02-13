@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 const projects = [
@@ -5,9 +6,19 @@ const projects = [
     title: 'Pion Blanc, Offer generator',
     description: `A startup we're building with a small team. The offer generator is aimed at SME's who struggle with creating requests for quotes containing product data from multiple suppliers.
 
-      I've done roughly half of the frontend, migrated the backend from Microsoft SQL Server to Postgres, and dockerized the entirety for easier development and deployment. I'm also in the middle of building our homepage.`,
+      I've done roughly half of the frontend, migrated the backend from Microsoft SQL Server to Postgres, and dockerized the entirety for easier development and deployment.`,
     link: '',
-    target: "_blank"
+    target: "_blank",
+    image: "/project_images/tarjousgeneraattori.png"
+  },
+  {
+    title: 'pionblanc.fi',
+    description: `Our company's website.
+
+      Design and development by me.`,
+    link: 'https://pionblanc.fi',
+    target: "_blank",
+    image: "/project_images/pionblanc_website.png"
   },
   {
     title: "LCA Data sharing portal for supply chains",
@@ -17,22 +28,25 @@ const projects = [
       
       More info on chapters 3.3 and 3.4 of my thesis, links below and in the header.`,
     link: "/thesis",
-    target: ""
+    target: "",
+    image: "/project_images/NetworkLCAPortal.png"
   },
   {
     title: "Full Stack Open",
-    description: `What an eye-opening course. Would recommend to anyone working on the field. Completed parts 1-9.
+    description: `What an eye-opening course. Would recommend to anyone working in the field. Completed parts 1-9.
       
       Raising this to a project status due to it's high relevancy and the fact that I completed most of this outside of my studies.
     `,
     link: "https://fullstackopen.com/",
-    target: "_blank"
+    target: "_blank",
+    image: null
   },
   {
     title: 'ProjectHub',
     description: 'A group project for school. A service for showcasing projects. I focused mostly on the frontend.',
     link: 'https://github.com/joelhackinen/projecthub',
-    target: "_blank"
+    target: "_blank",
+    image: null
   },
   {
     title: 'Minesweeper',
@@ -40,7 +54,8 @@ const projects = [
       Frontend is done with React and database with Node.js
     `,
     link: 'https://github.com/strengv1/minesweeper',
-    target: "_blank"
+    target: "_blank",
+    image: null
   },
 ]
 
@@ -60,6 +75,27 @@ export default function Projects() {
                     __html: project.description.replace(/\n/g, '<br>'),
                   }}
                 />
+                {project.image &&
+                  <div className="my-4">
+                    {project.link ?
+                      <Link href={project.link} target={project.target} rel="noopener noreferrer">
+                        <img
+                          style={{borderRadius:"1rem", border:"1px solid lightgray"}}
+                          src={project.image}
+                          alt="Image failed to load"
+                        />
+                      </Link>
+                      :
+                      <img
+                        style={{borderRadius:"1rem", border:"1px solid lightgray"}}
+                        src={project.image}
+                        alt="Image failed to load"
+                      />
+                    }
+                    
+                  </div>
+                }
+
                 {project.link && 
                   <div className="mt-4">
                     <Link
