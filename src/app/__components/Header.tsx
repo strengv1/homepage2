@@ -56,7 +56,7 @@ export default function Header() {
             aria-label="menu"
             onClick={toggleDrawer(true)}
           >
-            <MenuIcon className="bg-gray-900 rounded-md"></MenuIcon>
+            <MenuIcon className="rounded-md"></MenuIcon>
           </IconButton>
         </div>
 

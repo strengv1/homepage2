@@ -6,8 +6,8 @@ export default function Contact() {
         <div className="mt-6">
           <p className="text-lg text-gray-500">
             Feel free to reach out to me at:{' '}
-            <a href="mailto:villes-97@hotmail.com" className="text-blue-600 hover:text-blue-500">
-              villes-97@hotmail.com
+            <a href="mailto:ville.strengell@pionblanc.fi" className="text-blue-600 hover:text-blue-500">
+              ville.strengell@pionblanc.fi
             </a>
           </p>
           <div className="mt-4 flex space-x-4">
