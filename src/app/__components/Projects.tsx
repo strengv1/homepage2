@@ -50,7 +50,7 @@ const projects = [
   {
     title: 'Minesweeper',
     description: `My very first own react app: Minesweeper!
-      Frontend is done with React and database with Node.js
+      Frontend is done with React and scoreboard's database with Node.js
     `,
     link: 'https://github.com/strengv1/minesweeper',
     target: "_blank",

@@ -1,21 +1,29 @@
+import { Email, Phone } from "@mui/icons-material";
+
 export default function Contact() {
   return (
-    <section id="contact" className="bg-gray-50 py-16">
+    <section id="contact" className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-extrabold text-gray-900">Contact</h2>
-        <div className="mt-6">
-          <p className="text-lg text-gray-500">
-            Feel free to reach out to me at:{' '}
-            <a href="mailto:ville.strengell@pionblanc.fi" className="text-blue-600 hover:text-blue-500">
-              ville.strengell@pionblanc.fi
-            </a>
-          </p>
+        <div className="mt-6 flex gap-10">
+          <div>
+            <p className="text-lg text-gray-500">
+              <Email />{` `}
+              <a href="mailto:ville.strengell@pionblanc.fi" className="hover:text-black">
+                ville.strengell@pionblanc.fi
+              </a>
+            </p>
+            <p className="text-lg text-gray-500">
+              <Phone /> +358 50 494 5684
+            </p>
+          </div>
+
           <div className="mt-4 flex space-x-4">
             <a
               href="https://github.com/strengv1"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-gray-500"
+              className="text-gray-400 hover:text-black"
             >
               <span className="sr-only">GitHub</span>
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -30,7 +38,7 @@ export default function Contact() {
               href="https://www.linkedin.com/in/ville-strengell-40b3a01a0"
               target="none"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-gray-500"
+              className="text-gray-400 hover:text-black"
             >
               <span className="sr-only">LinkedIn</span>
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -46,7 +54,7 @@ export default function Contact() {
               href="https://www.instagram.com/villestrengell/"
               target="none"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-gray-500"
+              className="text-gray-400 hover:text-black"
             >
               <span className="sr-only">Instagram</span>
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">

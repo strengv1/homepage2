@@ -22,3 +22,13 @@ body {
 html{
   scroll-behavior: smooth;
 }
+
+/* Add a fade-in animation for hover */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fixed {
+  animation: fadeIn 0.2s ease-in-out;
+}
