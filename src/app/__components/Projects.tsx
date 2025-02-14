@@ -8,7 +8,8 @@ const projects = [
       I've done roughly half of the frontend, migrated the backend from Microsoft SQL Server to Postgres, and dockerized the entirety for easier development and deployment.`,
     link: '',
     target: "_blank",
-    image: "/project_images/tarjousgeneraattori.png"
+    image: "/project_images/tarjousgeneraattori.png",
+    technologies: ["React", "Tailwind", "Flask", "Postgres", "Docker", "Linux Server"]
   },
   {
     title: 'pionblanc.fi',
@@ -17,7 +18,8 @@ const projects = [
       Design and development by me.`,
     link: 'https://pionblanc.fi',
     target: "_blank",
-    image: "/project_images/pionblanc_website.png"
+    image: "/project_images/pionblanc_website.png",
+    technologies: ["NextJS", "Tailwind"]
   },
   {
     title: "LCA Data sharing portal for supply chains",
@@ -28,7 +30,8 @@ const projects = [
       More info on chapters 3.3 and 3.4 of my thesis, links below and in the header.`,
     link: "/thesis",
     target: "",
-    image: "/project_images/NetworkLCAPortal.png"
+    image: "/project_images/NetworkLCAPortal.png",
+    technologies: ["React", "Spring Boot", "Docker"]
   },
   {
     title: "Full Stack Open",
@@ -38,14 +41,16 @@ const projects = [
     `,
     link: "https://fullstackopen.com/",
     target: "_blank",
-    image: null
+    image: null,
+    technologies: ["React"," Node.js", "MongoDB"]
   },
   {
     title: 'ProjectHub',
     description: 'A group project for school. A service for showcasing projects. I focused mostly on the frontend.',
     link: 'https://github.com/joelhackinen/projecthub',
     target: "_blank",
-    image: null
+    image: null,
+    technologies: ["React", "Deno", "PostgreSQL"]
   },
   {
     title: 'Minesweeper',
@@ -54,7 +59,8 @@ const projects = [
     `,
     link: 'https://github.com/strengv1/minesweeper',
     target: "_blank",
-    image: null
+    image: null,
+    technologies: ["React", "Node.js", "MongoDB"]
   },
 ]
 
@@ -65,8 +71,8 @@ export default function Projects() {
         <h2 className="text-3xl font-extrabold text-gray-900">Projects</h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <div key={project.title} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="p-6">
+            <div key={project.title} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+              <div className="p-6 flex-grow flex flex-col gap-4">
                 <h3 className="text-lg font-medium text-gray-900">{project.title}</h3>
                 <p
                   className="mt-2 text-sm text-gray-500"
@@ -75,7 +81,7 @@ export default function Projects() {
                   }}
                 />
                 {project.image &&
-                  <div className="my-4">
+                  <div>
                     {project.link ?
                       <Link href={project.link} target={project.target} rel="noopener noreferrer">
                         <img
@@ -96,7 +102,7 @@ export default function Projects() {
                 }
 
                 {project.link && 
-                  <div className="mt-4">
+                  <div className="">
                     <Link
                       href={project.link}
                       className="text-sm font-medium text-blue-600 hover:text-blue-500"
@@ -107,7 +113,20 @@ export default function Projects() {
                     </Link>
                   </div>
                 }
+
               </div>
+              {project.technologies.length > 0 && 
+                <div className="mx-6 mb-4 text-gray-800 tracking-tight">
+                  {project.technologies.map((tech, idx) =>
+                    <>
+                      <div className="inline hover:text-gray-600 transition-all">
+                        {tech}
+                      </div>
+                      {idx !== project.technologies.length-1 && " | "}
+                    </>
+                  )}
+                </div>
+              }
             </div>
           ))}
         </div>
