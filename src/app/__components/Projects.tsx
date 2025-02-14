@@ -118,12 +118,12 @@ export default function Projects() {
               {project.technologies.length > 0 && 
                 <div className="mx-6 mb-4 text-gray-800 tracking-tight">
                   {project.technologies.map((tech, idx) =>
-                    <>
+                    <div key={tech} className="inline">
                       <div className="inline hover:text-gray-600 transition-all">
                         {tech}
                       </div>
                       {idx !== project.technologies.length-1 && " | "}
-                    </>
+                    </div>
                   )}
                 </div>
               }

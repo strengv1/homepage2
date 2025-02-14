@@ -10,8 +10,8 @@ export default function Hero() {
             <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
               Ville Strengell
             </h1>
-            <p className="mt-1 text-left">
-              <PinDrop />Espoo, Finland
+            <p className="mt-1 flex gap-1 items-center text-left text-lg ">
+              <PinDrop className="text-base" />Espoo, Finland
             </p>
             <p className="mt-4 text-xl text-left text-balance">
               <span className="hover:text-gray-600">Full-Stack Developer </span> |  
