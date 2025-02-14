@@ -53,7 +53,7 @@ export default function Skills() {
       description: 'Started using Tailwind as it comes recommended with NextJS projects. It is very quick and easy but I often use Google/Chatgpt to figure out the keywords.', examples: [] },
     
     { name: 'Git', icon: <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="1.5rem" height="1.5rem" viewBox="0 0 48 48"><path fill="#F4511E" d="M42.2,22.1L25.9,5.8C25.4,5.3,24.7,5,24,5c0,0,0,0,0,0c-0.7,0-1.4,0.3-1.9,0.8l-3.5,3.5l4.1,4.1c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3c0,0.5-0.1,0.9-0.3,1.3l4,4c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3s-1.3,3-3,3c-1.7,0-3-1.3-3-3c0-0.5,0.1-0.9,0.3-1.3l-4-4c-0.1,0-0.2,0.1-0.3,0.1v10.4c1.2,0.4,2,1.5,2,2.8c0,1.7-1.3,3-3,3s-3-1.3-3-3c0-1.3,0.8-2.4,2-2.8V18.8c-1.2-0.4-2-1.5-2-2.8c0-0.5,0.1-0.9,0.3-1.3l-4.1-4.1L5.8,22.1C5.3,22.6,5,23.3,5,24c0,0.7,0.3,1.4,0.8,1.9l16.3,16.3c0,0,0,0,0,0c0.5,0.5,1.2,0.8,1.9,0.8s1.4-0.3,1.9-0.8l16.3-16.3c0.5-0.5,0.8-1.2,0.8-1.9C43,23.3,42.7,22.6,42.2,22.1z"></path></svg>,
-      description: 'Version control and collaboration in various projects.', examples: [] },
+      description: 'Git is love, Git is life.. Who does not use Git?', examples: [] },
   ];
 
   const [tooltipContent, setTooltipContent] = useState<Skill>(emptySkill);
@@ -62,8 +62,12 @@ export default function Skills() {
   const handleMouseEnter = (skill: Skill, event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     setTooltipContent(skill);
+
+    // If tooltip has room on the right (width 260px) align left side of skillbox and tooltip
+    // If not, align right sides
+    const roomOnTheRight = window.innerWidth - rect.left;
     setTooltipPosition({
-      x: rect.left + rect.width / 2,
+      x: (roomOnTheRight > 260) ? rect.left : rect.right-260,
       y: rect.top + 45,
     });
   };
@@ -71,7 +75,6 @@ export default function Skills() {
   const handleMouseLeave = () => {
     setTooltipContent(emptySkill);
   };
-
   return (
     <section id="skills" className="bg-gray-100 py-16 border-b-gray-300 border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,11 +99,10 @@ export default function Skills() {
       {/* Tooltip */}
       {tooltipContent.name !== "" && (
         <div
-          className="fixed z-50 bg-white rounded-lg shadow-lg p-4 max-w-xs border border-gray-200"
+          className="fixed w-[260px] z-50 bg-white rounded-lg shadow-lg p-4 max-w-xs border border-gray-200"
           style={{
             top: tooltipPosition.y,
             left: tooltipPosition.x,
-            transform: 'translateX(-50%)', // Center the tooltip
           }}
         >
           <h3 className="text-lg font-bold text-gray-900">{tooltipContent.name}</h3>

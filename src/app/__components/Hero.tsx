@@ -43,7 +43,7 @@ export default function Hero() {
           />
         </div>
         <p className="mt-10 max-w-screen-md mx-auto text-left text-lg text-black">
-          Hey! I am a Full-Stack Web Developer looking for work in a company that treats it&apos;s employees as valued individuals and cultivates a sense of community.
+          Hey! I am a Full-Stack Web Developer looking for work.
         </p>
         <p className="mt-4 max-w-screen-md mx-auto text-left text-lg text-black">
           I recently graduated from Aalto University School of Electrical Engineering, where I majored in Automation and minored in Computer Science.
