@@ -79,9 +79,12 @@ export default function Projects() {
           {projects.map((project) => (
             <div key={project.title} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
               <div className="p-6 flex-grow flex flex-col gap-4">
-                <h3 className="text-lg font-medium text-gray-900">{project.title}</h3>
+                <div className="flex justify-between">
+                  <h3 className="text-lg font-medium text-gray-900">{project.title}</h3>
+                  <span className="text-xs text-gray-500 -my-3 ">{project.time}</span>
+                </div>
                 <p
-                  className="mt-2 text-sm text-gray-500"
+                  className="mt-2 text-sm text-gray-700"
                   dangerouslySetInnerHTML={{
                     __html: project.description.replace(/\n/g, '<br>'),
                   }}

@@ -82,7 +82,7 @@ export default function Workexperience() {
                 onMouseEnter={() => setYearsBolded(["2019"])}
                 onMouseLeave={() => setYearsBolded([""])}
               >
-                <h3 className="text-xl font-bold">June 2019 - September 2019  <span className={companyNameClasses}></span>Gemalto Oy</h3>
+                <h3 className="text-xl font-bold">June 2019 - September 2019  <span className={companyNameClasses}>Gemalto Oy</span></h3>
                 <p className="text-lg">Production Worker</p>
                 <ul className="list-disc ml-5">
                   <li>Summer job in a passport factory, where security and employee reliability were of utmost importance. Worked as an operator.</li>
