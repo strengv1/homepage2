@@ -2,8 +2,8 @@ import Link from 'next/link'
 
 const projects = [
   {
-    title: 'Pion Blanc, Offer generator',
-    description: `A startup we're building with a small team. The offer generator is aimed at SME's who struggle with creating requests for quotes containing product data from multiple suppliers.
+    title: 'Pion Blanc, Offer Generator',
+    description: `A startup we're building with a small team. The Offer Generator is aimed at SME's who struggle with creating requests for quotes containing product data from multiple suppliers.
 
       I've done roughly half of the frontend, migrated the backend from Microsoft SQL Server to Postgres, and dockerized the entirety for easier development and deployment.`,
     link: '',
