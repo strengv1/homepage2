@@ -73,7 +73,7 @@ export default function Workexperience() {
                 <p className="text-lg">Software Developer</p>
                 <ul className="list-disc ml-5">
                   <li>Developed Polycon&apos;s flagship product, Effector desktop version, and the palse.fi web portal for citizens and businesses. Worked on both server-side and client-side functionalities.</li>
-                  <li>Delphi, Vanilla CSS, JavaScript, jQuery</li>
+                  <li>Delphi, JavaScript, HTML, Vanilla CSS, jQuery</li>
                 </ul>
               </div>
 
@@ -100,7 +100,7 @@ export default function Workexperience() {
             </div>
           </div>
           {/* References */}
-          <div className="mb-8">
+          <div className="my-4">
             <h3 className="text-xl font-bold">References</h3>
             <p className="text-lg">Sanna Huhtala, Supervisor at Polycon</p>
             <p className="text-lg">Email: <a href="mailto:sanna.huhtala@polycon.fi">sanna.huhtala@polycon.fi</a></p>

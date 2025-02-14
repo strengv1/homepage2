@@ -3,6 +3,7 @@ import Link from 'next/link'
 const projects = [
   {
     title: 'Pion Blanc, Offer Generator',
+    time: "Ongoing",
     description: `A startup we're building with a small team. The Offer Generator is aimed at SME's who struggle with creating requests for quotes containing product data from multiple suppliers.
 
       I've done roughly half of the frontend, migrated the backend from Microsoft SQL Server to Postgres, and dockerized the entirety for easier development and deployment.`,
@@ -13,6 +14,7 @@ const projects = [
   },
   {
     title: 'pionblanc.fi',
+    time: "Ongoing",
     description: `Our company's website.
 
       Design and development by me.`,
@@ -23,6 +25,7 @@ const projects = [
   },
   {
     title: "LCA Data sharing portal for supply chains",
+    time: "2024",
     description: `As a part of my Master's thesis, I developed a data portal in collaboration with Semantum. 
     
       The portal is used by Stora Enso to collect Life Cycle Assessment (LCA) data from pulp suppliers.
@@ -35,6 +38,7 @@ const projects = [
   },
   {
     title: "Full Stack Open",
+    time: "2023",
     description: `What an eye-opening course. Would recommend to anyone working in the field. Completed parts 1-9.
       
       Raising this to a project status due to it's high relevancy and the fact that I completed most of this outside of my studies.
@@ -46,6 +50,7 @@ const projects = [
   },
   {
     title: 'ProjectHub',
+    time: "2023",
     description: 'A group project for school. A service for showcasing projects. I focused mostly on the frontend.',
     link: 'https://github.com/joelhackinen/projecthub',
     target: "_blank",
@@ -54,6 +59,7 @@ const projects = [
   },
   {
     title: 'Minesweeper',
+    time: "2023",
     description: `My very first own react app: Minesweeper!
       Frontend is done with React and scoreboard's database with Node.js
     `,

@@ -49,7 +49,7 @@ export default function Hero() {
           I recently graduated from Aalto University School of Electrical Engineering, where I majored in Automation and minored in Computer Science.
         </p>
         <p className="mt-4 max-w-screen-md mx-auto text-left text-lg text-black">
-          I&apos;m also a founder in an active startup Pion Blanc Oy, where we build tailored software for small businesses. More info on Projects-section.
+          I&apos;m also a Co-Founder in an active startup Pion Blanc Oy, where we build tailored software for small businesses. More info on Projects-section.
         </p>
       </div>
     </div>
