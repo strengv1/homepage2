@@ -58,9 +58,12 @@ export default function Skills() {
 
   const [tooltipContent, setTooltipContent] = useState<Skill>(emptySkill);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+  const [tooltipWidth, setTooltipWidth] = useState(260);
 
   const handleMouseEnter = (skill: Skill, event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const rect = event.currentTarget.getBoundingClientRect();
+
+    setTooltipWidth(rect.width < 260 ? 260 : rect.width)
     setTooltipContent(skill);
 
     // If tooltip has room on the right (width 260px) align left side of skillbox and tooltip
@@ -75,6 +78,7 @@ export default function Skills() {
   const handleMouseLeave = () => {
     setTooltipContent(emptySkill);
   };
+
   return (
     <section id="skills" className="bg-gray-100 py-16 border-b-gray-300 border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,10 +103,11 @@ export default function Skills() {
       {/* Tooltip */}
       {tooltipContent.name !== "" && (
         <div
-          className="fixed w-[260px] z-50 bg-white rounded-lg shadow-lg p-4 max-w-xs border border-gray-200"
+          className="fixed z-50 bg-white rounded-lg shadow-lg p-4 border border-gray-200"
           style={{
             top: tooltipPosition.y,
             left: tooltipPosition.x,
+            width: tooltipWidth
           }}
         >
           <h3 className="text-lg font-bold text-gray-900">{tooltipContent.name}</h3>
