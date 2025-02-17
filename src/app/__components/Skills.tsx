@@ -102,8 +102,8 @@ export default function Skills() {
             </div>
           ))}
         </div>
-        <h3 className="text-xl font-bold text-gray-900">Other skills:</h3>
-        <div className="mb-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+        <h3 className="text-xl font-bold text-gray-900">Other technologies I've used:</h3>
+        <div className="mb-6 mt-3 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
           {skills.map((skill) => (
             <div
               key={skill.name}
