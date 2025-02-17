@@ -13,7 +13,7 @@ export default function Workexperience() {
   const [yearsBolded, setYearsBolded] = useState<string[]>([""])
   const years = ["Now", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017"];
 
-  const getClass = (year: string) => yearsBolded.includes(year) ? "text-black" : "";
+  const getClass = (year: string) => yearsBolded.includes(year) ? "text-black font-bold" : "";
   return (
     <div id="workexperience" className="bg-white border-b-gray-300 border-b">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
