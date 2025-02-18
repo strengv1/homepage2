@@ -5,7 +5,7 @@ import { useState } from "react"
 export default function Workexperience() {
   const parentDivClasses = `
     border-y border-y-gray-200 py-2
-    hover:translate-x-2 sm:hover:translate-x-4 lg:hover:translate-x-10
+    hover:translate-x-2 sm:hover:translate-x-2 lg:hover:translate-x-5
     transition-all
   `
   const companyNameClasses = "text-2xl ml-4 border-l-[3px] border-l-black pl-2"
