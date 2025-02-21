@@ -1,5 +1,6 @@
-import { GitHub, Instagram, PinDrop } from "@mui/icons-material";
+import { FilePresent, GitHub, Instagram, PinDrop } from "@mui/icons-material";
 import Link from "next/link";
+import Tooltip from "@mui/material/Tooltip";
 
 export default function Hero() {
   return (
@@ -31,6 +32,12 @@ export default function Hero() {
               >
                 <GitHub color="action" className="hover:text-black"/>
               </Link>
+              <Tooltip title="Download My CV" arrow>
+                <Link href="/ville_strengell_cv_2025.pdf" download>
+                  <FilePresent color="action" className="hover:text-black"/>
+                </Link>
+              </Tooltip>
+                
               <span className="text-sm self-center hover:text-gray-600">ville.strengell@pionblanc.fi</span>
             </div>
           </div>
