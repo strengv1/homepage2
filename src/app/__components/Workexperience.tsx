@@ -15,7 +15,7 @@ export default function Workexperience() {
 
   const getClass = (year: string) => yearsBolded.includes(year) ? "text-black font-bold" : "";
   return (
-    <div id="workexperience" className="bg-white border-b-gray-300 border-b">
+    <section id="workexperience" className="bg-white border-b-gray-300 border-b">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="text-left text-black">
           <h2 className="text-3xl font-extrabold text-gray-900">Work Experience</h2>
@@ -109,7 +109,7 @@ export default function Workexperience() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

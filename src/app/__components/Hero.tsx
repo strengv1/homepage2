@@ -4,7 +4,7 @@ import Tooltip from "@mui/material/Tooltip";
 
 export default function Hero() {
   return (
-    <div className="bg-white border-b-gray-300 border-b">
+    <section className="bg-white border-b-gray-300 border-b">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row max-w-screen-md mx-auto">
           <div className="mx-auto sm:my-auto text-gray-500">
@@ -59,7 +59,7 @@ export default function Hero() {
           I&apos;m also a Co-Founder in an active startup Pion Blanc Oy, where we build tailored software for small businesses. More info on Projects-section.
         </p>
       </div>
-    </div>
+    </section>
   )
 }
 

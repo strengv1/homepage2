@@ -7,7 +7,7 @@ import Workexperience from './__components/Workexperience'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen">
       <main>
         <Hero />
         <Skills />
