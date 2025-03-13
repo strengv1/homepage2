@@ -34,7 +34,7 @@ const projects = [
     link: "/thesis",
     target: "",
     image: "/project_images/NetworkLCAPortal.png",
-    technologies: ["React", "Spring Boot", "Docker"]
+    technologies: ["React", "Spring Boot", "Docker", "MongoDB"]
   },
   {
     title: "Full Stack Open",
