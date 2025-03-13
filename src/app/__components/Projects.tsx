@@ -14,7 +14,7 @@ const projects = [
   },
   {
     title: 'pionblanc.fi',
-    time: "Ongoing",
+    time: "2025",
     description: `Our company's website.
 
       Design and development by me.`,

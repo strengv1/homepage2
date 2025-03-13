@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row max-w-screen-md mx-auto">
           <div className="mx-auto sm:my-auto text-gray-500">
-            <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+            <h1 className="common-title text-4xl font-extrabold bg-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
               Ville Strengell
             </h1>
             <p className="mt-1 flex gap-1 items-center text-left text-lg ">

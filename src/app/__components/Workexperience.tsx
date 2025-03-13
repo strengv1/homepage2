@@ -60,7 +60,7 @@ export default function Workexperience() {
                 <ul className="list-disc ml-5">
                   <li>Master&apos;s thesis position.</li>
                   <li>Worked together with Semantum Oy to develop a data portal for Stora Enso to collect LCA data from it&apos;s suppliers.</li>
-                  <li>React, Spring Boot, Docker</li>
+                  <li>React, Spring Boot, Docker, MongoDB</li>
                 </ul>
               </div>
 
