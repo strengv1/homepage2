@@ -13,6 +13,17 @@ const projects = [
     technologies: ["React", "Tailwind", "Flask", "Postgres", "Docker", "Linux Server"]
   },
   {
+    title: 'unilife.fi',
+    time: "2025",
+    description: `Website for a company that specializes in student events.
+
+      Design and development by me.`,
+    link: 'https://unilife-sable.vercel.app/',
+    target: "_blank",
+    image: "/project_images/unilife_website.png",
+    technologies: ["NextJS", "Tailwind"]
+  },
+  {
     title: 'pionblanc.fi',
     time: "2025",
     description: `Our company's website.
