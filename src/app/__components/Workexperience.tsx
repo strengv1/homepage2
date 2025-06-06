@@ -139,7 +139,7 @@ export default function Workexperience() {
               <p className="text-lg font-medium text-gray-800">Sanna Huhtala, Supervisor at Polycon</p>
               <p className="text-base text-gray-600">Email: <a href="mailto:sanna.huhtala@polycon.fi" className="text-blue-600 hover:text-blue-800 transition-colors">sanna.huhtala@polycon.fi</a></p>
               <blockquote className="mt-3 text-base italic text-gray-700 leading-relaxed">
-                "Ville has been careful in his work, documented his actions well, and communicated the results clearly. Cooperation with different parties and stakeholders has always been smooth. Ville has shown a willingness and ability to understand the bigger picture and the product's usability to develop it in the desired direction."
+                &quot;Ville has been careful in his work, documented his actions well, and communicated the results clearly. Cooperation with different parties and stakeholders has always been smooth. Ville has shown a willingness and ability to understand the bigger picture and the product&apos;s usability to develop it in the desired direction.&quot;
               </blockquote>
             </div>
           </div>
