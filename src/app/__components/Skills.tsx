@@ -136,17 +136,3 @@ export default function Skills() {
     </section>
   );
 }
-
-
-// {modalContent.examples.length > 0 && (
-//   <div className="mt-4">
-//     {modalContent.examples.map((example, index) => (
-//       <Image
-//         key={index}
-//         src={example}
-//         alt={`${modalContent.name} example ${index + 1}`}
-//         className="w-full rounded-md mt-2"
-//       />
-//     ))}
-//   </div>
-// )}
