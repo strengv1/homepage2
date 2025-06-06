@@ -4,7 +4,25 @@ export default function Contact() {
   return (
     <section id="contact" className="bg-white py-16 border-b-slate-200 border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-slate-900 mb-8">Contact</h2>
+        <h2
+          className="text-3xl font-extrabold text-slate-900 mb-8"
+          style={{
+            backgroundImage: `
+              linear-gradient(-75deg,
+                transparent 0,
+                transparent 5%,
+                rgba(255,255,255,0.7) 5%,
+                rgba(255,255,255,0.7) 10%,
+                transparent 10%,
+                transparent 100%
+              ),
+              linear-gradient(135deg, #374151 0%, #4b5563 50%, #374151 100%)
+            `,
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}
+        >Contact</h2>
         <div className="flex flex-col sm:flex-row gap-8 sm:gap-12">
           <div className="flex-1">
             <div className="space-y-4">

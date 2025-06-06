@@ -112,16 +112,46 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="bg-slate-50 border-b-slate-200 border-b py-16">
+    <section 
+      id="projects" 
+      className="relative border-b border-gray-200 py-16 bg-slate-50"
+    >
+      {/* Subtle grain texture overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.1]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-slate-900 mb-8">Projects</h2>
+        <h2 
+          className="text-3xl font-extrabold mb-8"
+          style={{
+            backgroundImage: `
+              linear-gradient(-75deg,
+                transparent 0,
+                transparent 5%,
+                rgba(255,255,255,0.7) 5%,
+                rgba(255,255,255,0.7) 10%,
+                transparent 10%,
+                transparent 100%
+              ),
+              linear-gradient(135deg, #374151 0%, #4b5563 50%, #374151 100%)
+            `,
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}
+        >
+          Projects
+        </h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => {
             const currentImageIndex = selectedImages[project.title] || 0
             const currentImage = project.images[currentImageIndex]
             
             return (
-              <div key={project.title} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden flex flex-col border border-slate-200">
+              <div key={project.title} className="bg-white/80 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-lg hover:shadow-blue-100/50 transition-all duration-300 overflow-hidden flex flex-col border border-gray-200/50 hover:border-blue-200">
                 {/* Image Section - Natural Height */}
                 {project.images.length > 0 && (
                   <div className="relative group">
@@ -152,7 +182,7 @@ export default function Projects() {
                             project.title, 
                             currentImageIndex === 0 ? project.images.length - 1 : currentImageIndex - 1
                           )}
-                          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200"
                           aria-label="Previous image"
                         >
                           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -166,7 +196,7 @@ export default function Projects() {
                             project.title, 
                             currentImageIndex === project.images.length - 1 ? 0 : currentImageIndex + 1
                           )}
-                          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200"
                           aria-label="Next image"
                         >
                           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -179,7 +209,7 @@ export default function Projects() {
                     {/* Image Navigation Dots - Only show if multiple images */}
                     {project.images.length > 1 && (
                       <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
-                        <div className="flex gap-1 bg-black bg-opacity-50 rounded-full px-2 py-1">
+                        <div className="flex gap-1 bg-black bg-opacity-60 rounded-full px-2 py-1">
                           {project.images.map((_, index) => (
                             <button
                               key={index}
@@ -201,13 +231,13 @@ export default function Projects() {
                 {/* Content Section - Flexible Height */}
                 <div className="p-6 flex-grow flex flex-col">
                   <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-lg font-semibold text-slate-900 leading-tight">{project.title}</h3>
-                    <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded-full ml-2 whitespace-nowrap">{project.time}</span>
+                    <h3 className="text-lg font-semibold text-gray-900 leading-tight">{project.title}</h3>
+                    <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded-full ml-2 whitespace-nowrap font-medium">{project.time}</span>
                   </div>
                   
                   <div className="flex-grow">
                     <p
-                      className="text-sm text-slate-700 leading-relaxed"
+                      className="text-sm text-gray-700 leading-relaxed"
                       dangerouslySetInnerHTML={{
                         __html: project.description.replace(/\n/g, '<br>'),
                       }}
@@ -216,14 +246,17 @@ export default function Projects() {
 
                   {/* Link Section */}
                   {project.link && (
-                    <div className="mt-4 pt-4 border-t border-slate-100">
+                    <div className="mt-4 pt-4 border-t border-gray-100">
                       <Link
                         href={project.link}
-                        className="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                        className="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center gap-1"
                         target={project.target}
                         rel="noopener noreferrer"
                       >
-                        View Project &rarr;
+                        View Project 
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                        </svg>
                       </Link>
                     </div>
                   )}
@@ -236,7 +269,7 @@ export default function Projects() {
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="inline-block text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded hover:bg-slate-200 transition-colors"
+                          className="inline-block text-xs bg-green-50 text-green-700 px-2 py-1 rounded hover:bg-blue-100 transition-all font-medium"
                         >
                           {tech}
                         </span>

@@ -61,76 +61,115 @@ export default function Skills() {
   const [tooltipContent, setTooltipContent] = useState<Skill>(emptySkill);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [tooltipWidth, setTooltipWidth] = useState(260);
-
+  
   const handleMouseEnter = (skill: Skill, event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const rect = event.currentTarget.getBoundingClientRect();
-
     setTooltipWidth(rect.width < 260 ? 260 : rect.width)
     setTooltipContent(skill);
-
     // If tooltip has room on the right (width 260px) align left side of skillbox and tooltip
     // If not, align right sides
     const roomOnTheRight = window.innerWidth - rect.left;
     setTooltipPosition({
       x: (roomOnTheRight > 260) ? rect.left : rect.right-260,
-      y: rect.top + 45,
+      y: rect.top + 55,
     });
   };
-
+  
   const handleMouseLeave = () => {
     setTooltipContent(emptySkill);
   };
-
+  
   return (
-    <section id="skills" className="bg-gray-100 py-16 border-b-gray-300 border-b">
+    <section 
+      id="skills" 
+      className="relative border-b border-gray-200 py-16 bg-gray-50"
+    >
+      {/* Subtle grain texture overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.2] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-gray-900">Skills</h2>
-        <h3 className="mt-5 text-xl font-bold text-gray-900">Most Proficient in:</h3>
+        <h2 
+          className="text-3xl font-extrabold mb-8"
+          style={{
+            backgroundImage: `
+                linear-gradient(-75deg,
+                  transparent 0,
+                  transparent 5%,
+                  rgba(255,255,255,0.7) 5%,
+                  rgba(255,255,255,0.7) 10%,
+                  transparent 10%,
+                  transparent 100%
+                ),
+                linear-gradient(135deg, #374151 0%, #4b5563 50%, #374151 100%)
+              `,
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}
+        >
+          Skills
+        </h2>
+        
+        <h3 className="mt-5 text-xl font-bold text-gray-900 mb-4">Most Proficient in:</h3>
         <div className="my-3 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
           {mostProficientSkills.map((skill) => (
             <div
               key={skill.name}
-              className="bg-white px-4 py-2 border-gray-300 border rounded-md shadow-md text-center text-gray-800 cursor-pointer hover:bg-gray-200 relative"
+              className="bg-white/80 backdrop-blur-sm px-4 py-3 border border-blue-200 rounded-lg shadow-sm text-center text-gray-800 cursor-pointer hover:bg-blue-50 hover:border-blue-300 hover:shadow-md transition-all duration-200 relative group"
               onMouseEnter={(e) => handleMouseEnter(skill, e)}
               onMouseLeave={handleMouseLeave}
             >
               <div className="flex items-center justify-center space-x-2">
-                {skill.icon}
-                <span>{skill.name}</span>
+                <div className="text-blue-600 group-hover:text-blue-700 transition-colors">
+                  {skill.icon}
+                </div>
+                <span className="font-medium group-hover:text-blue-900 transition-colors">{skill.name}</span>
               </div>
             </div>
           ))}
         </div>
-        <h3 className="text-xl font-bold text-gray-900">Other technologies I&apos;ve used:</h3>
+        
+        <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4">Other technologies I&apos;ve used:</h3>
         <div className="mb-6 mt-3 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="bg-white px-4 py-2 border-gray-300 border rounded-md shadow-md text-center text-gray-800 cursor-pointer hover:bg-gray-200 relative"
+              className="bg-white/60 backdrop-blur-sm px-4 py-3 border border-gray-200 rounded-lg shadow-sm text-center text-gray-700 cursor-pointer hover:bg-white hover:border-gray-300 hover:shadow-md transition-all duration-200 relative group"
               onMouseEnter={(e) => handleMouseEnter(skill, e)}
               onMouseLeave={handleMouseLeave}
             >
               <div className="flex items-center justify-center space-x-2">
-                {skill.icon}
-                <span>{skill.name}</span>
+                <div className="text-gray-500 group-hover:text-gray-700 transition-colors">
+                  {skill.icon}
+                </div>
+                <span className="group-hover:text-gray-900 transition-colors">{skill.name}</span>
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      {/* Tooltip */}
+      
+      {/* Enhanced Tooltip */}
       {tooltipContent.name !== "" && (
         <div
-          className="fixed z-50 bg-white rounded-lg shadow-lg p-4 border border-gray-200"
+          className="fixed z-50 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 border border-gray-200 max-w-sm"
           style={{
             top: tooltipPosition.y,
             left: tooltipPosition.x,
             width: tooltipWidth
           }}
         >
-          <h3 className="text-lg font-bold text-gray-900">{tooltipContent.name}</h3>
-          <p className="mt-2 text-gray-600">{tooltipContent.description}</p>
+          <h3 className="text-lg font-bold text-gray-900 mb-2">{tooltipContent.name}</h3>
+          <p className="text-sm text-gray-600 leading-relaxed">{tooltipContent.description}</p>
+          
+          <div 
+            className="absolute -top-2 left-4 w-4 h-4 bg-white/95 border-l border-t border-gray-200 transform rotate-45"
+            style={{ left: Math.min(20, tooltipWidth / 2 - 8) }}
+          />
         </div>
       )}
     </section>
