@@ -60,6 +60,7 @@ export default function Skills() {
 
   const [tooltipContent, setTooltipContent] = useState<Skill>(emptySkill);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+  const [tooltipArrowPosition, setTooltipArrowPosition] = useState<"left" | "right">("left")
   const [tooltipWidth, setTooltipWidth] = useState(260);
   
   const handleMouseEnter = (skill: Skill, event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -73,6 +74,7 @@ export default function Skills() {
       x: (roomOnTheRight > 260) ? rect.left : rect.right-260,
       y: rect.top + 55,
     });
+    setTooltipArrowPosition(roomOnTheRight > 260 ? "left" : "right")
   };
   
   const handleMouseLeave = () => {
@@ -167,8 +169,9 @@ export default function Skills() {
           <p className="text-sm text-gray-600 leading-relaxed">{tooltipContent.description}</p>
           
           <div 
-            className="absolute -top-2 left-4 w-4 h-4 bg-white/95 border-l border-t border-gray-200 transform rotate-45"
-            style={{ left: Math.min(20, tooltipWidth / 2 - 8) }}
+            className={`absolute -top-2 ${tooltipArrowPosition==="left" ? "left-4" : "right-4"} 
+              w-4 h-4 bg-white/95 border-l border-t border-gray-200 transform rotate-45
+            `}
           />
         </div>
       )}

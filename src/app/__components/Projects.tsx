@@ -35,11 +35,11 @@ const projects = [
     description: `Website for a company that specializes in student events.
 
       Design and development by me.`,
-    link: 'https://unilife-sable.vercel.app/',
+    link: 'https://www.unilife.fi/',
     target: "_blank",
     images: [
       "/project_images/unilife_website.png",
-      "/project_images/unilife_events.jpg"
+      "/project_images/unilife_events.jpg",      
     ],
     technologies: ["NextJS", "Tailwind"]
   },

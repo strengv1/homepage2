@@ -105,7 +105,7 @@ export default function Workexperience() {
                 <p className="text-lg text-gray-700 mt-1">Software Developer</p>
                 <ul className="list-disc ml-5 mt-3 space-y-1 text-gray-600">
                   <li>Developed Polycon&apos;s flagship product, Effector desktop version, and the palse.fi web portal for citizens and businesses. Worked on both server-side and client-side functionalities.</li>
-                  <li className="text-emerald-600 font-medium">Delphi, JavaScript, HTML, Vanilla CSS, jQuery</li>
+                  <li className="text-emerald-600 font-medium">Delphi, JavaScript, HTML, CSS, jQuery</li>
                 </ul>
               </div>
 
