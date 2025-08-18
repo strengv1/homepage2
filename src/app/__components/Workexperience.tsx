@@ -6,7 +6,7 @@ export default function Workexperience() {
   const parentDivClasses = `
     border-y border-y-gray-200 py-4
     hover:translate-x-2 sm:hover:translate-x-2 lg:hover:translate-x-3
-    transition-all duration-200 ease-in-out
+    transition-transform duration-200 ease-in-out
     hover:bg-gradient-to-r hover:from-blue-50/50 hover:to-transparent
   `
   const companyNameClasses = "text-2xl ml-4 border-l-[3px] border-l-blue-600 pl-2"
@@ -60,7 +60,7 @@ export default function Workexperience() {
               style={{ textShadow: "1px 1px rgb(248 250 252 / var(--tw-text-opacity, 1))"}}
             >
               {years.map(year => (
-                <div key={year} className={`${getClass(year)} transition-colors duration-200 text-sm font-medium`}>
+                <div key={year} className={`${getClass(year)} text-sm font-medium`}>
                   {year}
                 </div>
               ))}
