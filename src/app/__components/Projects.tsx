@@ -30,20 +30,6 @@ const projects = [
     technologies: ["NextJS", "Clerk", "Drizzle ORM", "Postgres", "Docker", "Tailwind"]
   },
   {
-    title: 'www.unilife.fi',
-    time: "2025",
-    description: `Website for a company that specializes in student events.
-
-      Design and development by me.`,
-    link: 'https://www.unilife.fi/',
-    target: "_blank",
-    images: [
-      "/project_images/unilife_website.png",
-      "/project_images/unilife_events.jpg",      
-    ],
-    technologies: ["NextJS", "Tailwind"]
-  },
-  {
     title: 'tournaments.unilife.fi',
     time: "2025",
     description: `Serverless tournament management system for organizing Swiss-system and elimination tournaments. Built for occasional use (2-3 times per year) with cost-efficiency in mind.
@@ -65,6 +51,20 @@ const projects = [
       "/project_images/tournament-score-reporter.png",      
     ],
     technologies: ["NextJS", "Tailwind", "Drizzle", "Vercel", "Serverless", "Neon"]
+  },
+  {
+    title: 'www.unilife.fi',
+    time: "2025",
+    description: `Website for a company that specializes in student events.
+
+      Design and development by me.`,
+    link: 'https://www.unilife.fi/',
+    target: "_blank",
+    images: [
+      "/project_images/unilife_website.png",
+      "/project_images/unilife_events.jpg",      
+    ],
+    technologies: ["NextJS", "Tailwind"]
   },
   {
     title: 'pionblanc.fi',
