@@ -30,7 +30,7 @@ const projects = [
     technologies: ["NextJS", "Clerk", "Drizzle ORM", "Postgres", "Docker", "Tailwind"]
   },
   {
-    title: 'unilife.fi',
+    title: 'www.unilife.fi',
     time: "2025",
     description: `Website for a company that specializes in student events.
 
@@ -42,6 +42,29 @@ const projects = [
       "/project_images/unilife_events.jpg",      
     ],
     technologies: ["NextJS", "Tailwind"]
+  },
+  {
+    title: 'tournaments.unilife.fi',
+    time: "2025",
+    description: `Serverless tournament management system for organizing Swiss-system and elimination tournaments. Built for occasional use (2-3 times per year) with cost-efficiency in mind.
+
+      Hosted on Vercel + Neon → cost-efficient & scalable.
+
+      Public page (mobile-first): live standings, match info, stats. Fully cached to reduce edge requests and data queries with hundreds of concurrent users.
+
+      Admin dashboard (secure, desktop-first): instant score updates.
+
+      Fun logic challenges, such as custom Swiss tie-breaking (modified Buchholz) and fair elimination seeding.`,
+    link: 'https://www.unilife.fi/battleroyale',
+    target: "_blank",
+    images: [
+      "/project_images/tournament-standings.png",
+      "/project_images/tournament-team.png",      
+      "/project_images/tournament-elimination.png",      
+      "/project_images/tournament-lobby.png",      
+      "/project_images/tournament-score-reporter.png",      
+    ],
+    technologies: ["NextJS", "Tailwind", "Drizzle", "Vercel", "Serverless", "Neon"]
   },
   {
     title: 'pionblanc.fi',
@@ -145,7 +168,7 @@ export default function Projects() {
         >
           Projects
         </h2>
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 2xl:grid-cols-3">
           {projects.map((project) => {
             const currentImageIndex = selectedImages[project.title] || 0
             const currentImage = project.images[currentImageIndex]
@@ -159,7 +182,7 @@ export default function Projects() {
                       {project.link ? (
                         <Link href={project.link} target={project.target} rel="noopener noreferrer">
                           <img
-                            className="w-full h-auto object-contain hover:opacity-95 transition-opacity duration-200"
+                            className="w-full h-auto object-contain"
                             src={currentImage}
                             alt={`${project.title} preview`}
                           />
@@ -269,7 +292,7 @@ export default function Projects() {
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="inline-block text-xs bg-green-50 text-green-700 px-2 py-1 rounded hover:bg-blue-100 transition-all font-medium"
+                          className="inline-block text-xs bg-green-50 text-green-700 px-2 py-1 rounded font-medium"
                         >
                           {tech}
                         </span>

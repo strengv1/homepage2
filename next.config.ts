@@ -1,5 +1,9 @@
 module.exports = {
   reactStrictMode: true,
   output: 'export',
-  // Add other necessary config options
-}
+  webpack: (config: { optimization: { minimize: boolean; }; }, { dev }: any) => {
+    if (dev) {
+      config.optimization.minimize = false;
+    }
+    return config;
+  }}
