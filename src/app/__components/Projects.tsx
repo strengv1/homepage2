@@ -48,13 +48,13 @@ const projects = [
     time: "2025",
     description: `Serverless tournament management system for organizing Swiss-system and elimination tournaments. Built for occasional use (2-3 times per year) with cost-efficiency in mind.
 
-      Hosted on Vercel + Neon → cost-efficient & scalable.
+      Hosted on Vercel + Neon → scale-to-zero benefits of serverless is great for infriquent use.
 
       Public page (mobile-first): live standings, match info, stats. Fully cached to reduce edge requests and data queries with hundreds of concurrent users.
 
       Admin dashboard (secure, desktop-first): instant score updates.
 
-      Fun logic challenges, such as custom Swiss tie-breaking (modified Buchholz) and fair elimination seeding.`,
+      Custom logic for Swiss tie-breaking (modified Buchholz) and fair elimination seeding.`,
     link: 'https://www.unilife.fi/battleroyale',
     target: "_blank",
     images: [
