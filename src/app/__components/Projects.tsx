@@ -16,18 +16,18 @@ const projects = [
     technologies: ["React", "Tailwind", "Flask", "Postgres", "Docker", "Linux Server"]
   },
   {
-    title: 'approkartat.fi',
+    title: 'approt.app',
     time: "Ongoing",
     description: `A revitalized web platform for organizing student events, originally abandoned and now under active development.
 
-      My contributions include refactoring the backend with Drizzle ORM, redesigning the event creation flow for organizers, and improving the site's visuals and responsiveness.`,
-    link: '',
+      My contributions include migrating the backend from Prisma to Drizzle ORM, redesigning the event creation flow for organizers, and improving the site's visuals and responsiveness.`,
+    link: 'https://approt.app/',
     target: "_blank",
     images: [
       "/project_images/approkartat_dashboard.jpg",
       "/project_images/approkartat_admin.jpg",    
     ],
-    technologies: ["NextJS", "Clerk", "Drizzle ORM", "Postgres", "Docker", "Tailwind"]
+    technologies: ["NextJS", "Clerk", "Drizzle ORM", "Postgres", "Docker", "Tailwind", "AWS"]
   },
   {
     title: 'tournaments.unilife.fi',
