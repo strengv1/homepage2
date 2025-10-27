@@ -105,9 +105,7 @@ const projects = [
   {
     title: 'Minesweeper',
     time: "2023",
-    description: `My very first own react app: Minesweeper!
-      
-      Deployed using AWS CDK as an Infrastructure as Code exercise:
+    description: `My very first own react app: Minesweeper! Deployed using AWS CDK as an Infrastructure as Code exercise:
       
       Frontend: React SPA deployed to S3 with CloudFront CDN
       Backend: Node.js/Express REST API on AWS Lambda + API Gateway
