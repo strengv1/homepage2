@@ -5,17 +5,6 @@ import { useState } from 'react'
 
 const projects = [
   {
-    title: 'Pion Blanc, Offer Generator',
-    time: "Ongoing",
-    description: `A startup we're building with a small team. The Offer Generator is aimed at SME's who struggle with creating requests for quotes containing product data from multiple suppliers.
-
-      I've done roughly half of the frontend, migrated the backend from Microsoft SQL Server to Postgres, and dockerized the entirety for easier development and deployment.`,
-    link: '',
-    target: "_blank",
-    images: ["/project_images/tarjousgeneraattori.png"],
-    technologies: ["React", "Tailwind", "Flask", "Postgres", "Docker", "Linux Server"]
-  },
-  {
     title: 'approt.app',
     time: "Ongoing",
     description: `A revitalized web platform for organizing student events, originally abandoned and now under active development.
@@ -28,6 +17,17 @@ const projects = [
       "/project_images/approkartat_admin.jpg",    
     ],
     technologies: ["NextJS", "Clerk", "Drizzle ORM", "Postgres", "Docker", "Tailwind", "AWS"]
+  },
+  {
+    title: 'Pion Blanc, Offer Generator',
+    time: "Ongoing",
+    description: `A startup we're building with a small team. The Offer Generator is aimed at SME's who struggle with creating requests for quotes containing product data from multiple suppliers.
+
+      I've done roughly half of the frontend, migrated the backend from Microsoft SQL Server to Postgres, and dockerized the entirety for easier development and deployment.`,
+    link: '',
+    target: "_blank",
+    images: ["/project_images/tarjousgeneraattori.png"],
+    technologies: ["React", "Tailwind", "Flask", "Postgres", "Docker", "Linux Server"]
   },
   {
     title: 'tournaments.unilife.fi',
@@ -103,24 +103,20 @@ const projects = [
     technologies: ["React"," Node.js", "MongoDB"]
   },
   {
-    title: 'ProjectHub',
-    time: "2023",
-    description: 'A group project for school. A service for showcasing projects. I focused mostly on the frontend.',
-    link: 'https://github.com/joelhackinen/projecthub',
-    target: "_blank",
-    images: [],
-    technologies: ["React", "Deno", "PostgreSQL"]
-  },
-  {
     title: 'Minesweeper',
     time: "2023",
     description: `My very first own react app: Minesweeper!
-      Frontend is done with React and scoreboard's database with Node.js
+      
+      Deployed using AWS CDK as an Infrastructure as Code exercise:
+      
+      Frontend: React SPA deployed to S3 with CloudFront CDN
+      Backend: Node.js/Express REST API on AWS Lambda + API Gateway
+      Database: MongoDB Atlas
     `,
-    link: 'https://github.com/strengv1/minesweeper',
+    link: 'https://dg0fog5qdqniw.cloudfront.net/beginner',
     target: "_blank",
-    images: [],
-    technologies: ["React", "Node.js", "MongoDB"]
+    images: ["/project_images/miinaharava.png"],
+    technologies: ["React", "Node.js", "MongoDB", "AWS CDK"]
   },
 ]
 
