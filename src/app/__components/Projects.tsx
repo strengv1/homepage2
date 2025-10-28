@@ -111,7 +111,7 @@ const projects = [
       Backend: Node.js/Express REST API on AWS Lambda + API Gateway
       Database: MongoDB Atlas
     `,
-    link: 'https://dg0fog5qdqniw.cloudfront.net/beginner',
+    link: 'https://ddl5x3j52n903.cloudfront.net/beginner',
     target: "_blank",
     images: ["/project_images/miinaharava.png"],
     technologies: ["React", "Node.js", "MongoDB", "AWS CDK"]
