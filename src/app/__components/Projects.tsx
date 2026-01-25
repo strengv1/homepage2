@@ -53,6 +53,22 @@ const projects = [
     technologies: ["NextJS", "Tailwind", "Drizzle", "Vercel", "Serverless", "Neon"]
   },
   {
+    title: 'Ebook Reader (RSVP)',
+    time: "2026",
+    description: `A lightweight .epub ebook reader with RSVP (Rapid Serial Visual Presentation) capability.
+    
+      Incoming features: 
+      - Auth / Sign up
+      - Save progress and books to own library
+      - Support for more ebook data formats
+      - Offline mode
+    `,
+    link: 'https://reading-app-zeta-swart.vercel.app/',
+    target: "_blank",
+    images: ["/project_images/ebook_reader_front.webp", "/project_images/ebook_reader_word_display.webp"],
+    technologies: ["React", "Tailwind", ".EPUB Format"]
+  },
+  {
     title: 'www.unilife.fi',
     time: "2025",
     description: `Website for a company that specializes in student events.

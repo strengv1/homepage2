@@ -12,7 +12,7 @@ export default function Workexperience() {
   const companyNameClasses = "text-2xl ml-4 border-l-[3px] border-l-blue-600 pl-2"
 
   const [yearsBolded, setYearsBolded] = useState<string[]>([""])
-  const years = ["Now", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017"];
+  const years = ["Now", "2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017"];
 
   const getClass = (year: string) => yearsBolded.includes(year) ? "text-blue-600 font-bold" : "text-gray-500";
   
@@ -67,10 +67,23 @@ export default function Workexperience() {
             </div>
 
             <div className="flex-grow max-w-screen-md flex flex-col gap-6 my-4">
+              {/* Optomed Oy */}
+              <div
+                className={parentDivClasses}
+                onMouseEnter={() => setYearsBolded(["2025", "2026", "Now"])}
+                onMouseLeave={() => setYearsBolded([""])}
+              >
+                <h3 className="text-xl font-bold text-gray-900">December 2025 - Present <span className={companyNameClasses}>Optomed Oy</span></h3>
+                <p className="text-lg text-gray-700 mt-1">Software Developer</p>
+                <ul className="list-disc ml-5 mt-3 space-y-1 text-gray-600">
+                  <li className="text-emerald-600 font-medium">Spring Boot, Python, Linux, AWS, React, Docker</li>
+                </ul>
+              </div>
+
               {/* Pion Blanc */}
               <div
                 className={parentDivClasses}
-                onMouseEnter={() => setYearsBolded(["2024", "Now"])}
+                onMouseEnter={() => setYearsBolded(["2024", "2025", "2026", "Now"])}
                 onMouseLeave={() => setYearsBolded([""])}
               >
                 <h3 className="text-xl font-bold text-gray-900">November 2024 - Present <span className={companyNameClasses}>Pion Blanc Oy</span></h3>

@@ -5,15 +5,7 @@ import Tooltip from "@mui/material/Tooltip";
 export default function Hero() {
   return (
     <section 
-      className="relative border-b border-gray-200"
-      style={{
-        background: `
-          radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
-          radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
-          linear-gradient(135deg, #fefefe 0%, #f8fafc 100%)
-        `,
-      }}
+      className="relative border-b border-gray-200 bg-white"
     >
       {/* Subtle grain texture overlay */}
       <div 
@@ -91,7 +83,7 @@ export default function Hero() {
             alt="Ville Strengell"
             width={250}
             height={250}
-            className="mx-auto rounded-full mt-6 sm:mt-0 shadow-lg ring-4 ring-white ring-opacity-50"
+            className="mx-auto rounded-full mt-6 sm:mt-0 shadow-lg ring-4 ring-gray-100"
           />
         </div>
         <div className="mt-12 max-w-screen-md mx-auto text-left space-y-6">
