@@ -63,7 +63,7 @@ const projects = [
       - Support for more ebook data formats
       - Offline mode
     `,
-    link: 'https://reading-app-zeta-swart.vercel.app/',
+    link: 'https://speedread.pionblanc.fi/',
     target: "_blank",
     images: ["/project_images/ebook_reader_front.webp", "/project_images/ebook_reader_word_display.webp"],
     technologies: ["React", "Tailwind", ".EPUB Format"]
