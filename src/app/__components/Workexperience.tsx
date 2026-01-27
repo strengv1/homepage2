@@ -76,7 +76,8 @@ export default function Workexperience() {
                 <h3 className="text-xl font-bold text-gray-900">December 2025 - Present <span className={companyNameClasses}>Optomed Oy</span></h3>
                 <p className="text-lg text-gray-700 mt-1">Software Developer</p>
                 <ul className="list-disc ml-5 mt-3 space-y-1 text-gray-600">
-                  <li className="text-emerald-600 font-medium">Spring Boot, Python, Linux, AWS, React, Docker</li>
+                  <li>Built a demo application for an upcoming product within my first month, and deployed it on AWS EC2.</li>
+                  <li className="text-emerald-600 font-medium">Spring Boot, Python, Linux, AWS (EC2), React, Docker</li>
                 </ul>
               </div>
 

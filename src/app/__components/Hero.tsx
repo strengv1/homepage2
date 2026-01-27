@@ -88,13 +88,10 @@ export default function Hero() {
         </div>
         <div className="mt-12 max-w-screen-md mx-auto text-left space-y-6">
           <p className="text-lg text-gray-700 leading-7">
-            Hey! I am a Full-Stack Web Developer looking for work.
+            Hey! I am a Full-Stack Developer currently working at Optomed Plc (Commit Oy).
           </p>
           <p className="text-lg text-gray-700 leading-7">
-            I recently graduated from Aalto University School of Electrical Engineering, where I majored in Automation and minored in Computer Science.
-          </p>
-          <p className="text-lg text-gray-700 leading-7">
-            I&apos;m also a Co-Founder in an active startup Pion Blanc Oy, where we build tailored software for small businesses. More info on Projects-section.
+            I&apos;m also a Co-Founder in a startup Pion Blanc Oy, where we build tailored software for small businesses. More info on Projects-section.
           </p>
         </div>
       </div>
