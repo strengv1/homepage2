@@ -1,7 +1,9 @@
 "use client"
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import ProjectFullScreenView from './ProjectFullscreenView'
 
 const projects = [
   {
@@ -136,6 +138,10 @@ const projects = [
 
 export default function Projects() {
   const [selectedImages, setSelectedImages] = useState<Record<string, number>>({})
+  const [activeProject, setActiveProject] = useState<null | {
+    title: string
+    imageIndex: number
+  }>(null)
 
   const handleImageClick = (projectTitle: string, imageIndex: number): void => {
     setSelectedImages(prev => ({
@@ -204,6 +210,23 @@ export default function Projects() {
                           alt={`${project.title} preview`}
                         />
                       )}
+                      <button
+                        onClick={() =>
+                          setActiveProject({
+                            title: project.title,
+                            imageIndex: currentImageIndex,
+                          })
+                        }
+                        className="absolute bottom-2 right-2 bg-white/60 hover:bg-white/80 text-white rounded-md p-2 opacity-0 group-hover:opacity-100 transition"
+                        aria-label="Open fullscreen preview"
+                      >
+                        <Image
+                          src="svgs/full-screen.svg"
+                          alt="full screen"
+                          width={24}
+                          height={24}
+                        />
+                      </button>
                     </div>
                     
                     {/* Navigation Arrows - Only show if multiple images */}
@@ -315,6 +338,42 @@ export default function Projects() {
           })}
         </div>
       </div>
+      {activeProject && (() => {
+        const project = projects.find(p => p.title === activeProject.title)
+        if (!project) return null
+
+        const { imageIndex } = activeProject
+        const imageCount = project.images.length
+
+        return (
+          <ProjectFullScreenView
+            projectTitle={project.title}
+            images={project.images}
+            currentIndex={imageIndex}
+            onClose={() => setActiveProject(null)}
+            onPrev={() =>
+              setActiveProject({
+                title: project.title,
+                imageIndex:
+                  imageIndex === 0 ? imageCount - 1 : imageIndex - 1,
+              })
+            }
+            onNext={() =>
+              setActiveProject({
+                title: project.title,
+                imageIndex:
+                  imageIndex === imageCount - 1 ? 0 : imageIndex + 1,
+              })
+            }
+            onSelect={(index) =>
+              setActiveProject({
+                title: project.title,
+                imageIndex: index,
+              })
+            }
+          />
+        )
+      })()}
     </section>
   )
 }
