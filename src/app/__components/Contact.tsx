@@ -37,7 +37,7 @@ export default function Contact() {
               </p>
               <p className="text-lg text-slate-600 flex items-center gap-3">
                 <Phone className="text-slate-500" />
-                <span>+358 50 494 5684</span>
+                <a href="tel:+358504945684" className="hover:text-slate-900 transition-colors">+358 50 494 5684</a>
               </p>
             </div>
           </div>

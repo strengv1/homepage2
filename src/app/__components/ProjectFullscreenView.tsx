@@ -1,3 +1,7 @@
+"use client"
+
+import { useEffect, useRef } from 'react'
+
 export default function ProjectFullScreenView({
   projectTitle,
   images,
@@ -16,10 +20,34 @@ export default function ProjectFullScreenView({
   onSelect: (index: number) => void
 }) {
   const image = images[currentIndex]
+  const touchStartX = useRef<number | null>(null)
+
+  // Keyboard: Esc closes, arrow keys switch images
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+      else if (e.key === 'ArrowLeft' && images.length > 1) onPrev()
+      else if (e.key === 'ArrowRight' && images.length > 1) onNext()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [images.length, onClose, onPrev, onNext])
+
+  // Lock page scrolling while open
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = previousOverflow
+    }
+  }, [])
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center px-4"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${projectTitle} screenshots`}
+      className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center px-4"
       onClick={onClose}
     >
       <div
@@ -29,17 +57,27 @@ export default function ProjectFullScreenView({
         {/* Close */}
         <button
           onClick={onClose}
+          aria-label="Close"
           className="absolute top-4 right-4 z-10 text-gray-500 hover:text-black"
         >
           ✕
         </button>
 
         {/* Image */}
-        <div className="relative bg-black flex items-center justify-center h-full">
+        <div
+          className="relative bg-black flex items-center justify-center h-full"
+          onTouchStart={(e) => (touchStartX.current = e.touches[0].clientX)}
+          onTouchEnd={(e) => {
+            if (touchStartX.current === null || images.length < 2) return
+            const dx = e.changedTouches[0].clientX - touchStartX.current
+            if (Math.abs(dx) > 50) (dx < 0 ? onNext : onPrev)()
+            touchStartX.current = null
+          }}
+        >
           <img
             src={image}
             alt={projectTitle}
-            className="h-full w-auto object-contain"
+            className="max-h-full max-w-full object-contain"
           />
 
           {images.length > 1 && (
@@ -47,6 +85,7 @@ export default function ProjectFullScreenView({
               {/* Left */}
               <button
                 onClick={onPrev}
+                aria-label="Previous image"
                 className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center"
               >
                 ‹
@@ -55,6 +94,7 @@ export default function ProjectFullScreenView({
               {/* Right */}
               <button
                 onClick={onNext}
+                aria-label="Next image"
                 className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center"
               >
                 ›

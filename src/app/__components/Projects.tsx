@@ -7,6 +7,24 @@ import ProjectFullScreenView from './ProjectFullscreenView'
 
 const projects = [
   {
+    title: 'HSL Live',
+    time: "2026",
+    description: `A tiny, mobile-first live map of HSL vehicles. Every bus, tram, metro, train and ferry in Helsinki moving in real time. Also works for Tampere, Turku and Jyväskylä.
+
+      - Tap a vehicle to see its route, delay, speed and next stops with ETAs
+      - Tap a stop for a live departures board
+      - Search by line or vehicle number, bookmarkable via the URL
+
+      Own minimal MQTT-over-WebSocket client that only subscribes to the map area in view, and Vercel edge functions on top of Digitransit's API. About 52 KB of JS gzipped.`,
+    link: 'https://hsl-live.pionblanc.fi/',
+    target: "_blank",
+    images: [
+      "/project_images/hsl_live_route.webp",
+      "/project_images/hsl_live_overview.webp",
+    ],
+    technologies: ["TypeScript", "Vite", "Leaflet", "MQTT", "Vercel"]
+  },
+  {
     title: 'approt.app',
     time: "Ongoing",
     description: `A revitalized web platform for organizing student events, originally abandoned and now under active development.
@@ -190,26 +208,23 @@ export default function Projects() {
             const currentImage = project.images[currentImageIndex]
             
             return (
-              <div key={project.title} className="bg-white/80 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-lg hover:shadow-blue-100/50 transition-all duration-300 overflow-hidden flex flex-col border border-gray-200/50 hover:border-blue-200">
+              <div key={project.title} className="bg-white/80 backdrop-blur-xs rounded-lg shadow-xs hover:shadow-lg hover:shadow-blue-100/50 transition-all duration-300 overflow-hidden flex flex-col border border-gray-200/50 hover:border-blue-200">
                 {/* Image Section - Natural Height */}
                 {project.images.length > 0 && (
                   <div className="relative group">
                     <div className="w-full">
-                      {project.link ? (
-                        <Link href={project.link} target={project.target} rel="noopener noreferrer">
-                          <img
-                            className="w-full h-auto object-contain"
-                            src={currentImage}
-                            alt={`${project.title} preview`}
-                          />
-                        </Link>
-                      ) : (
-                        <img
-                          className="w-full h-auto object-contain"
-                          src={currentImage}
-                          alt={`${project.title} preview`}
-                        />
-                      )}
+                      <img
+                        className="w-full h-auto object-contain cursor-zoom-in"
+                        src={currentImage}
+                        alt={`${project.title} preview`}
+                        loading="lazy"
+                        onClick={() =>
+                          setActiveProject({
+                            title: project.title,
+                            imageIndex: currentImageIndex,
+                          })
+                        }
+                      />
                       <button
                         onClick={() =>
                           setActiveProject({
@@ -217,11 +232,11 @@ export default function Projects() {
                             imageIndex: currentImageIndex,
                           })
                         }
-                        className="absolute bottom-2 right-2 bg-white/60 hover:bg-white/80 text-white rounded-md p-2 opacity-0 group-hover:opacity-100 transition"
+                        className="absolute bottom-2 right-2 bg-white/60 hover:bg-white/80 text-white rounded-md p-2 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 [@media(hover:none)]:opacity-100 transition"
                         aria-label="Open fullscreen preview"
                       >
                         <Image
-                          src="svgs/full-screen.svg"
+                          src="/svgs/full-screen.svg"
                           alt="full screen"
                           width={24}
                           height={24}
@@ -238,7 +253,7 @@ export default function Projects() {
                             project.title, 
                             currentImageIndex === 0 ? project.images.length - 1 : currentImageIndex - 1
                           )}
-                          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200"
+                          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 focus-visible:opacity-100 [@media(hover:none)]:opacity-100 transition-all duration-200"
                           aria-label="Previous image"
                         >
                           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -252,7 +267,7 @@ export default function Projects() {
                             project.title, 
                             currentImageIndex === project.images.length - 1 ? 0 : currentImageIndex + 1
                           )}
-                          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200"
+                          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 focus-visible:opacity-100 [@media(hover:none)]:opacity-100 transition-all duration-200"
                           aria-label="Next image"
                         >
                           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -265,7 +280,7 @@ export default function Projects() {
                     {/* Image Navigation Dots - Only show if multiple images */}
                     {project.images.length > 1 && (
                       <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
-                        <div className="flex gap-1 bg-black bg-opacity-60 rounded-full px-2 py-1">
+                        <div className="flex gap-1 bg-black/60 rounded-full px-2 py-1">
                           {project.images.map((_, index) => (
                             <button
                               key={index}
@@ -273,7 +288,7 @@ export default function Projects() {
                               className={`w-2 h-2 rounded-full transition-colors ${
                                 index === currentImageIndex
                                   ? 'bg-white'
-                                  : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+                                  : 'bg-white/50 hover:bg-white/75'
                               }`}
                               aria-label={`View image ${index + 1} of ${project.images.length}`}
                             />
@@ -285,19 +300,16 @@ export default function Projects() {
                 )}
 
                 {/* Content Section - Flexible Height */}
-                <div className="p-6 flex-grow flex flex-col">
+                <div className="p-6 grow flex flex-col">
                   <div className="flex justify-between items-start mb-3">
                     <h3 className="text-lg font-semibold text-gray-900 leading-tight">{project.title}</h3>
                     <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded-full ml-2 whitespace-nowrap font-medium">{project.time}</span>
                   </div>
                   
-                  <div className="flex-grow">
-                    <p
-                      className="text-sm text-gray-700 leading-relaxed"
-                      dangerouslySetInnerHTML={{
-                        __html: project.description.replace(/\n/g, '<br>'),
-                      }}
-                    />
+                  <div className="grow">
+                    <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
+                      {project.description.trim()}
+                    </p>
                   </div>
 
                   {/* Link Section */}
@@ -325,7 +337,7 @@ export default function Projects() {
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="inline-block text-xs bg-green-50 text-green-700 px-2 py-1 rounded font-medium"
+                          className="inline-block text-xs bg-green-50 text-green-700 px-2 py-1 rounded-sm font-medium"
                         >
                           {tech}
                         </span>

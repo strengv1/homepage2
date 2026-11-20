@@ -7,7 +7,7 @@ export default function Workexperience() {
     border-y border-y-gray-200 py-4
     hover:translate-x-2 sm:hover:translate-x-2 lg:hover:translate-x-3
     transition-transform duration-200 ease-in-out
-    hover:bg-gradient-to-r hover:from-blue-50/50 hover:to-transparent
+    hover:bg-linear-to-r hover:from-blue-50/50 hover:to-transparent
   `
   const companyNameClasses = "text-2xl ml-4 border-l-[3px] border-l-blue-600 pl-2"
 
@@ -66,7 +66,7 @@ export default function Workexperience() {
               ))}
             </div>
 
-            <div className="flex-grow max-w-screen-md flex flex-col gap-6 my-4">
+            <div className="grow max-w-(--breakpoint-md) flex flex-col gap-6 my-4">
               {/* Optomed Oy */}
               <div
                 className={parentDivClasses}
@@ -147,9 +147,9 @@ export default function Workexperience() {
           </div>
           
           {/* References */}
-          <div className="mt-12 max-w-screen-md">
+          <div className="mt-12 max-w-(--breakpoint-md)">
             <h3 className="text-xl font-bold text-gray-900 mb-4">References</h3>
-            <div className="bg-gradient-to-r from-blue-50/40 to-purple-50/40 border-l-4 border-l-blue-500 pl-6 py-4 rounded-r-lg">
+            <div className="bg-linear-to-r from-blue-50/40 to-purple-50/40 border-l-4 border-l-blue-500 pl-6 py-4 rounded-r-lg">
               <p className="text-lg font-medium text-gray-800">Sanna Huhtala, Supervisor at Polycon</p>
               <p className="text-base text-gray-600">Email: <a href="mailto:sanna.huhtala@polycon.fi" className="text-blue-600 hover:text-blue-800 transition-colors">sanna.huhtala@polycon.fi</a></p>
               <blockquote className="mt-3 text-base italic text-gray-700 leading-relaxed">

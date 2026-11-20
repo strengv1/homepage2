@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Master's thesis | Ville Strengell",
+};
+
 export default function Thesis() {
   return (
     <div className="bg-gray-100" style={{ height: "calc(100vh - 4rem)" }}>

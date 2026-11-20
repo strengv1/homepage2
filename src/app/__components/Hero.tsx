@@ -16,7 +16,7 @@ export default function Hero() {
       />
       
       <div className="relative max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row max-w-screen-md mx-auto">
+        <div className="flex flex-col sm:flex-row max-w-(--breakpoint-md) mx-auto">
           <div className="mx-auto sm:my-auto text-gray-600">
             <h1 
               className="common-title text-4xl font-extrabold sm:text-5xl sm:tracking-tight lg:text-6xl"
@@ -37,7 +37,7 @@ export default function Hero() {
               Ville Strengell
             </h1>
             <p className="mt-2 flex gap-1 items-center text-left text-base text-gray-500 hover:text-red-500 transition-colors cursor-default">
-              <PinDrop className="text-sm " />Espoo, Finland
+              <PinDrop className="text-sm " />Helsinki, Finland
             </p>
             <p className="mt-6 text-xl text-left text-balance leading-relaxed">
               <span className="hover:text-blue-600 transition-colors cursor-default">Full-Stack Developer</span> |  
@@ -49,6 +49,8 @@ export default function Hero() {
                 <Link
                   href="https://instagram.com/villestrengell"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
                   className="text-gray-400 hover:text-pink-500 transition-colors duration-200"
                 >
                   <Instagram />
@@ -56,6 +58,8 @@ export default function Hero() {
                 <Link
                   href="https://github.com/strengv1"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
                   className="text-gray-400 hover:text-gray-800 transition-colors duration-200"
                 >
                   <GitHub />
@@ -64,6 +68,7 @@ export default function Hero() {
                   <Link 
                     href="/ville_strengell_cv_2025.pdf" 
                     download
+                    aria-label="Download my CV"
                     className="text-gray-400 hover:text-blue-600 transition-colors duration-200"
                   >
                     <FilePresent />
@@ -83,10 +88,10 @@ export default function Hero() {
             alt="Ville Strengell"
             width={250}
             height={250}
-            className="mx-auto rounded-full mt-6 sm:mt-0 shadow-lg ring-4 ring-gray-100"
+            className="mx-auto object-cover rounded-full mt-6 sm:mt-0 shadow-lg ring-4 ring-gray-100"
           />
         </div>
-        <div className="mt-12 max-w-screen-md mx-auto text-left space-y-6">
+        <div className="mt-12 max-w-(--breakpoint-md) mx-auto text-left space-y-6">
           <p className="text-lg text-gray-700 leading-7">
             Hey! I am a Full-Stack Developer currently working at Optomed Plc (Commit Oy).
           </p>

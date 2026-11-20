@@ -20,10 +20,10 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-md z-10 sticky top-0 h-[4rem]">
+    <header className="bg-white shadow-md z-10 sticky top-0 h-16">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
         {/* Name */}
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           <Link href="/" className="text-xl font-bold text-gray-800">
             Ville Strengell
           </Link>
@@ -53,7 +53,7 @@ export default function Header() {
           <IconButton
             edge="start"
             color="inherit"
-            aria-label="menu"
+            aria-label="Open menu"
             onClick={toggleDrawer(true)}
           >
             <MenuIcon className="rounded-md"></MenuIcon>
@@ -73,24 +73,24 @@ export default function Header() {
             onKeyDown={toggleDrawer(false)}
           >
             <div className="flex justify-end p-4">
-              <IconButton onClick={toggleDrawer(false)}>
+              <IconButton onClick={toggleDrawer(false)} aria-label="Close menu">
                 <CloseIcon />
               </IconButton>
             </div>
             <List>
-              <ListItemButton component="a" href="/thesis">
+              <ListItemButton component={Link} href="/thesis">
                 <ListItemText primary="Master's thesis" />
               </ListItemButton>
-              <ListItemButton component="a" href="/#skills">
+              <ListItemButton component={Link} href="/#skills">
                 <ListItemText primary="Skills" />
               </ListItemButton>
-              <ListItemButton component="a" href="/#projects">
+              <ListItemButton component={Link} href="/#projects">
                 <ListItemText primary="Projects" />
               </ListItemButton>
-              <ListItemButton component="a" href="/#workexperience">
+              <ListItemButton component={Link} href="/#workexperience">
                 <ListItemText primary="Experience" />
               </ListItemButton>
-              <ListItemButton component="a" href="/#contact">
+              <ListItemButton component={Link} href="/#contact">
                 <ListItemText primary="Contact" />
               </ListItemButton>
             </List>
